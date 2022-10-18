@@ -11,3 +11,17 @@
 8. the gate will remain open till the car passes.
 9. if the number plate is not detected the gate will be closed and red light will be turned 
 10. repeat the infinite loop
+
+## List of Items
+| Name       | Quantity | Component             |
+|------------|----------|-----------------------|
+| U1         | 1        | Arduino Uno R3        |
+| U2         | 1        | H-bridge Motor Driver |
+| M2         | 1        | Hobby Gearmotor       |
+| D1         | 1        | LED RGB               |
+| R1, R3, R4 | 3        | 220 Ω Resistor        |
+
+## Schematic 
+![Schematic](schematic.png)
+
+
