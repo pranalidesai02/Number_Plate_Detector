@@ -11,3 +11,7 @@
 8. the gate will remain open till the car passes.
 9. if the number plate is not detected the gate will be closed and red light will be turned 
 10. repeat the infinite loop
+
+
+##Schematic 
+![Schematic](schematic.png)
