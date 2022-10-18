@@ -12,6 +12,9 @@
 9. if the number plate is not detected the gate will be closed and red light will be turned 
 10. repeat the infinite loop
 
+## Flowchart
+![flowchart](flowchart.png)
+
 ## List of Items
 | Name       | Quantity | Component             |
 |------------|----------|-----------------------|
