@@ -1,15 +1,15 @@
 import cv2
 import pytesseract
-#import PythonScript
+import PythonScript
 
-LIST = ["21 BH 0001 AA","21 BH 2345 AA","KA 05 MG 1909"]
+LIST = ["21 BH 0001 AA","21 BH 2345 AA","KA 05 MG 1909","KA 19 EQ 1316","KA 19 P 8488"]
 pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files\Tesseract-OCR\\tesseract'
 
 cam = cv2.VideoCapture(0)
 #cv2.namedWindow("output", cv2.WINDOW_NORMAL)
 #cv2.resizeWindow("output", 640,480)
 
-currentframe = 0
+#currentframe = 0
 
 success,frame = cam.read()
 
@@ -56,15 +56,18 @@ while success:
             new_img=frame[y:y+h,x:x+w]
             break
     
-    #frame = cv2.drawContours(frame, [screenCnt], -1, (0, 255, 0), 3)
-
-    cv2.imshow("output",frame)
+    image = frame.copy()
+    try:
+        cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 3)
+        cv2.imshow("output",image)
+    except:
+        cv2.imshow("output",frame)
 
     plate = pytesseract.image_to_string(new_img, lang='eng')
     
     if any(word in plate for word in LIST):
         print("Number plate is:", plate)
-        #PythonScript.license_plate_detected()
+        PythonScript.license_plate_detected()
         break
 
     if cv2.waitKey(1) == 27:
