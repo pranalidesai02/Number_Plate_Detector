@@ -12,4 +12,3 @@ def license_plate_detected():
         print("LED On and gate open")
         time.sleep(0.1) 
         ser.write(b'T') 
-
